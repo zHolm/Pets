@@ -1,0 +1,65 @@
+
+<div class="title">
+	<h1>Pet Shelter</h1>
+	<a [routerLink]="['/pets']">Home</a>
+</div>
+<div class="col m-2">
+	<h3>Edit this pet</h3>
+	
+	<form (submit)="editPet()">
+		<label for= "name">Pet name:</label><br>
+			<span>
+			<input 
+			type="text" 
+			id="name" 
+			name="name" 
+			required
+			[(ngModel)]="ePet.name"
+			#name="ngModel"	
+			minlength="3"
+			><span *ngIf="!name.valid">Name require and needs to be three characters</span>					
+			</span>
+			<br>
+			
+		<label for= "type">Pet type:</label>
+		<br>
+		<span>
+		<input 
+			  type="text" 
+			  id="type" 
+			  name="type" 
+			  required
+			  minlength="3"
+			  [(ngModel)]="ePet.type"
+			  #type = "ngModel"
+			  ><span *ngIf="!type.valid">Type required and needs to be three characters</span>					
+			</span>
+			<br>
+		<label for= "desc">Description:</label><br>
+		<span>
+		<input 
+			   type="text" 
+			   id="desc" 
+			   name="desc" 
+			   required
+			   minlength="3"
+			   [(ngModel)]="ePet.desc"
+			   #desc = ngModel
+			   ><span *ngIf="!desc.valid">Description required and needs to be three characters</span>					
+			</span>
+			<br>
+		<h3>Skills:</h3>
+		<div class="skills row">
+			<div class="col">
+				<label for="s1">Skill 1: </label>	
+				<input type="text" id="s1" name="s1" [(ngModel)]="ePet.skill1"><br>
+				<label for="s2">Skill 2: </label>	
+				<input type="text" id="s2" name="s2" [(ngModel)]="ePet.skill2"><br>
+				<label for="s1">Skill 3: </label>	
+				<input type="text" id="s3" name="s3" [(ngModel)]="ePet.skill3"><br>
+			</div>
+		</div>
+		<button class="btn bg-success">Edit pet</button>
+		<button (click)="goToDetails()" class="btn bg-danger" type="button">Cancel</button>
+	</form>
+</div>
