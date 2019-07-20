@@ -13,6 +13,7 @@ const routes: Routes = [
 	{path: 'pets/new', component: NewComponent},
 	{path: 'pets/:id', component: PetDetailsComponent},
 	{path: 'pets/:id/edit', component: EditComponent},
+	{path: '', pathMatch: 'full', redirectTo: '/pets'},
 ];
 
 @NgModule({

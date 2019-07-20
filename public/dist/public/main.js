@@ -107,6 +107,7 @@ const routes = [
     { path: 'pets/new', component: _new_new_component__WEBPACK_IMPORTED_MODULE_4__["NewComponent"] },
     { path: 'pets/:id', component: _pet_details_pet_details_component__WEBPACK_IMPORTED_MODULE_5__["PetDetailsComponent"] },
     { path: 'pets/:id/edit', component: _edit_edit_component__WEBPACK_IMPORTED_MODULE_6__["EditComponent"] },
+    { path: '', pathMatch: 'full', redirectTo: '/pets' },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
