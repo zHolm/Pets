@@ -70,7 +70,7 @@ module.exports = {
 		})
 	},
 	 like: (req,res)=>{
-		models.Pet.update({_id: req.params.id}, {$inc:{like: 1}},{runValidators: true}, (err, data)=>{
+		models.Pet.update({_id: req.params.id}, {$inc:{like: 1}},{runValidators: true, context:'query'}, (err, data)=>{
 			if(err){
 				console.log('not updated');
 				res.json({message: "Error", error:err})
