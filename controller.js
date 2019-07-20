@@ -46,7 +46,7 @@ module.exports = {
 		})
 	},
 	update : (req,res)=>{
-		models.Pet.update({_id: req.params.id}, {$set: req.body},{runValidators: true}, (err, data)=>{
+		models.Pet.update({_id: req.params.id}, {$set: req.body},{runValidators: true, context: 'query'}, (err, data)=>{
 			if(err){
 				console.log('not updated');
 				res.json({message: "Error", error:err})
